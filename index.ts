@@ -2,14 +2,6 @@ export class Machine {
   constructor(public type: number, public machineName: string) {}
 
   get name(): string {
-    // let machineName = '';
-    // if (this.machineName == null || this.machineName == '' || this.machineName == undefined) {
-    //   if (this.type == 2) machineName = 'tractor';
-    //   else if (this.type == 0) machineName = 'bulldozer';
-    //   else if (this.type == 1) machineName = 'crane';
-    //   else if (this.type == 4) machineName = 'car';
-    //   else if (this.type == 3) machineName = 'truck';
-    // }
     let machineName: string;
     if (!this.machineName) {
       switch (this.type) {
@@ -37,19 +29,6 @@ export class Machine {
   }
 
   get description(): string {
-    // let hasMaxSpeed = true;
-    // if (this.type == 3) hasMaxSpeed = false;
-    // else if (this.type == 1) hasMaxSpeed = true;
-    // else if (this.type == 2) hasMaxSpeed = true;
-    // else if (this.type == 4) hasMaxSpeed = false;
-    // let description = '';
-    // description += ' ';
-    // description += this.color + ' ';
-    // description += this.name;
-    // description += ' ';
-    // description += '[';
-    // description += this.getMaxSpeed(this.type, hasMaxSpeed) + '].';
-
     let hasMaxSpeed: boolean;
 
     if (this.type) {
@@ -84,14 +63,6 @@ export class Machine {
   }
 
   get color(): string {
-    // let color = "white";
-    // if (this.type == 1) color = "blue";
-    // else if (this.type == 0) color = "red";
-    // else if (this.type == 4) color = "brown";
-    // else if (this.type == 3) color = "yellow";
-    // else if (this.type == 2) color = "green";
-    // else color = "white";
-    // return color;
     let color: string;
     switch (this.type) {
       case 0:
@@ -115,21 +86,6 @@ export class Machine {
   }
 
   get trimColor(): string {
-    // let baseColor = "white";
-    // if (this.type == 0) baseColor = "red";
-    // else if (this.type == 1) baseColor = "blue";
-    // else if (this.type == 2) baseColor = "green";
-    // else if (this.type == 3) baseColor = "yellow";
-    // else if (this.type == 4) baseColor = "brown";
-    // else baseColor = "white";
-
-    // let trimColor = "";
-    // if (this.type == 1 && this.isDark(baseColor)) trimColor = "black";
-    // else if (this.type == 1 && !this.isDark(baseColor)) trimColor = "white";
-    // else if (this.type == 2 && this.isDark(baseColor)) trimColor = "gold";
-    // else if (this.type == 3 && this.isDark(baseColor)) trimColor = "silver";
-    // return trimColor;
-
     let baseColor = this.color;
     let trimColor = "";
     if (this.type) {
@@ -145,17 +101,6 @@ export class Machine {
   }
 
   isDark(color: string) {
-    // let isDark = false;
-    // if (color == "red") isDark = true;
-    // else if (color == "yellow") isDark = false;
-    // else if (color == "green") isDark = true;
-    // else if (color == "black") isDark = true;
-    // else if (color == "white") isDark = false;
-    // else if (color == "beige") isDark = false;
-    // else if (color == "babyblue") isDark = false;
-    // else if (color == "crimson") isDark = true;
-    // return isDark;
-
     let isDark = false;
     color === "red" ||
     color === "green" ||
