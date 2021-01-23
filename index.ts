@@ -66,23 +66,30 @@ export class Machine {
     let color: string;
     switch (this.type) {
       case 0:
-        return (color = "red");
+        color = "red";
+        break;
 
       case 1:
-        return (color = "blue");
+        color = "blue";
+        break;
 
       case 2:
-        return (color = "green");
+        color = "green";
+        break;
 
       case 3:
-        return (color = "yellow");
+        color = "yellow";
+        break;
 
       case 4:
-        return (color = "brown");
+        color = "brown";
+        break;
 
       default:
-        return (color = "white");
+        color = "white";
+        break;
     }
+    return color;
   }
 
   get trimColor(): string {
@@ -112,14 +119,14 @@ export class Machine {
   }
 
   getMaxSpeed(machineType: any, noMax = false) {
-    let absoluteMax = 70;
     let max = 70;
-    if (machineType == 1 && noMax == false) max = 70;
-    else if (noMax == false && machineType == 2) max = 60;
-    else if (machineType == 0 && noMax == true) max = 80;
-    else if (machineType == 2 && noMax == true) max = 90;
-    else if (machineType == 4 && noMax == true) max = 90;
-    else if (machineType == 1 && noMax == true) max = 75;
+    if (noMax) {
+      if (machineType === 0) max = 80;
+      else if (machineType == 1) max = 75;
+      else if (machineType == 2 || machineType == 4) max = 90;
+    } else {
+      if (machineType == 2) max = 60;
+    }
     return max;
   }
 }
