@@ -31,29 +31,9 @@ export class Machine {
   get description(): string {
     let hasMaxSpeed: boolean;
 
-    if (this.type) {
-      switch (this.type) {
-        case 1:
-          hasMaxSpeed = true;
-          break;
-
-        case 2:
-          hasMaxSpeed = true;
-          break;
-
-        case 3:
-          hasMaxSpeed = false;
-          break;
-
-        case 4:
-          hasMaxSpeed = false;
-          break;
-
-        default:
-          hasMaxSpeed = true;
-          break;
-      }
-    }
+    this.type === 3 || this.type === 4
+      ? (hasMaxSpeed = false)
+      : (hasMaxSpeed = true);
 
     let description = ` ${this.color} ${this.name} [${this.getMaxSpeed(
       this.type,
